@@ -3,4 +3,4 @@ project(wrestler)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_library(wrestler wrestler.cpp wrestler.h config.h)
+add_library(wrestler wrestler.cpp wrestler.h params.h)

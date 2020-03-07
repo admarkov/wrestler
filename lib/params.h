@@ -7,9 +7,9 @@ namespace wrestler {
     using std::string;
     namespace net = boost::asio;
 
-    class WrestlerConfig {
+    class ServerParams {
     public:
-        WrestlerConfig(string_view host)
+        ServerParams(string_view host)
             : threads_(1)
         {
             // TODO: URL parser
@@ -33,7 +33,7 @@ namespace wrestler {
             address_ = net::ip::make_address(host.to_string());
         }
 
-        ~WrestlerConfig() = default;
+        ~ServerParams() = default;
 
         net::ip::address address() {
             return address_;
@@ -47,7 +47,7 @@ namespace wrestler {
             return threads_;
         }
 
-        WrestlerConfig& setThreads(uint8_t t) {
+        ServerParams& setThreads(uint8_t t) {
             threads_ = t;
             return *this;
         }
